@@ -14,6 +14,7 @@
 export WS_ROOT=$(CURDIR)
 export BR=$(WS_ROOT)/build-root
 CCACHE_DIR?=$(BR)/.ccache
+CFLAGS += -Wno-unused-but-set-variable
 SHELL:=$(shell which bash)
 GDB?=gdb
 PLATFORM?=vpp

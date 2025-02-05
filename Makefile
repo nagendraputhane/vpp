@@ -82,13 +82,16 @@ DEB_DEPENDS += nasm
 DEB_DEPENDS += iperf ethtool  # for 'make test TEST=vm_vpp_interfaces'
 DEB_DEPENDS += libpcap-dev
 DEB_DEPENDS += tshark
+DEB_DEPENDS += libunwind-dev
+DEB_DEPENDS += jq
 
 LIBFFI=libffi6 # works on all but 20.04 and debian-testing
 
 ifeq ($(OS_VERSION_ID),24.04)
   	DEB_DEPENDS += python3-virtualenv
   	DEB_DEPENDS += libssl-dev
-  	DEB_DEPENDS += clang-14 clang-format-14
+	DEB_DEPENDS += llvm clang clang-format-15
+	export CLANG_FORMAT_VER=15
   	LIBFFI=libffi8
   	DEB_DEPENDS += enchant-2
 else ifeq ($(OS_VERSION_ID),22.04)

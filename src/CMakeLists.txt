@@ -166,7 +166,7 @@ endif()
 # TODO: Remove these flags once gcc-14 is supported in VPP
 if (CMAKE_C_COMPILER_ID STREQUAL "GNU" AND
     CMAKE_C_COMPILER_VERSION VERSION_GREATER_EQUAL "14")
-  add_compile_options(-Wno-error=unused-variable)
+  add_compile_options(-Wno-error=unused-but-set-variable)
 endif()
 
 set(BUILD_TYPES release debug coverity gcov)

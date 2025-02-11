@@ -67,16 +67,14 @@ jobs:
             sudo apt-get install -y apt-utils gcc meson sudo make dialog ccache git build-essential software-properties-common
             sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
             sudo apt-get update -q -y
-            sudo apt-get update && \
-            sudo apt-get install -y \
-            curl build-essential autoconf automake ccache debhelper dkms git \
-            libtool libapr1-dev dh-python libconfuse-dev git-review exuberant-ctags \
-            cscope pkg-config gcovr lcov chrpath libnuma-dev python3-all \
-            python3-setuptools check libffi-dev python3-ply libunwind-dev cmake \
-            ninja-build python3-jsonschema python3-yaml python3-venv python3-dev \
-            python3-pip libnl-3-dev libnl-route-3-dev libmnl-dev python3-virtualenv \
-            libssl-dev libelf-dev libpcap-dev iperf3 nasm iperf ethtool tshark jq \
-            llvm clang clang-format-15 enchant-2 libffi8
+            sudo apt-get install -y  curl autoconf automake debhelper dkms
+            sudo apt-get install -y  libtool libapr1-dev dh-python libconfuse-dev git-review exuberant-ctags
+            sudo apt-get install -y  cscope pkg-config gcovr lcov chrpath libnuma-dev python3-all
+            sudo apt-get install -y  python3-setuptools check libffi-dev python3-ply libunwind-dev cmake
+            sudo apt-get install -y  ninja-build python3-jsonschema python3-yaml python3-venv python3-dev
+            sudo apt-get install -y  python3-pip libnl-3-dev libnl-route-3-dev libmnl-dev python3-virtualenv
+            sudo apt-get install -y  libssl-dev libelf-dev libpcap-dev iperf3 nasm iperf ethtool tshark jq
+            sudo apt-get install -y  llvm clang clang-format-15 enchant-2 libffi8
             sudo apt-get install -y  aspell aspell-en autopoint autotools-dev binfmt-support binutils binutils-aarch64-linux-gnu
             sudo apt-get install -y  binutils-common bsdextrautils bzip2 ca-certificates clang-14 cmake-data cpp cpp-11 cpp-12 dbus
             sudo apt-get install -y  dctrl-tools debugedit dh-autoreconf dh-elpa-helper dh-strip-nondeterminism dictionaries-common dirmngr
@@ -111,21 +109,16 @@ jobs:
             sudo apt-get install -y  llvm-14-tools lsb-release lto-disabled-list m4 man-db manpages manpages-dev media-types netbase
             sudo apt-get install -y  openssh-client openssl patch perl perl-modules-5.38 pinentry-curses po-debconf publicsuffix
             sudo apt-get install -y  python-babel-localedata python3 python3-attr python3-babel python3-bs4 python3-certifi python3-chardet
-            sudo apt-get install -y  python3-distlib python3-setuptools python3-filelock python3-html5lib python3-idna
+            sudo apt-get install -y  python3-distlib python3-filelock python3-html5lib python3-idna
             sudo apt-get install -y  python3-importlib-metadata python3-jinja2 python3-lib2to3 python3-lxml python3-markupsafe python3-minimal
             sudo apt-get install -y  python3-more-itertools python3-pip-whl python3-pkg-resources python3-platformdirs python3-pygments
             sudo apt-get install -y  python3-pyrsistent python3-requests python3-setuptools-whl python3-six python3-soupsieve python3-tz
             sudo apt-get install -y  python3-urllib3 python3-webencodings python3-wheel python3-wheel-whl python3-zipp python3.10
-            sudo apt-get install -y  python3-dev python3-minimal python3-venv readline-common rpcsvc-proto shared-mime-info tzdata
+            sudo apt-get install -y  python3-minimal readline-common rpcsvc-proto shared-mime-info tzdata
             sudo apt-get install -y  ucf uuid-dev wireshark-common xauth xdg-user-dirs xz-utils zlib1g-dev libgmpxx4ldbl
-            sudo apt-get install -y check chrpath clang clang-format-14 cmake cscope debhelper dh-python dkms liblz4-dev
-            sudo apt-get install -y ethtool exuberant-ctags gcovr git-review iperf iperf3 lcov libapr1-dev liblzma-dev wget
-            sudo apt-get install -y libconfuse-dev libelf-dev libffi8 libmnl-dev libnl-3-dev libnl-route-3-dev libzstd-dev
-            sudo apt-get install -y libnuma-dev libpcap-dev libssl-dev nasm ninja-build python3-all python3-dev nettle-dev
-            sudo apt-get install -y python3-jsonschema pkg-config python3-pip python3-ply python3-setuptools python3-venv
-            sudo apt-get install -y python3-virtualenv tshark lsb-release doxygen libarchive-dev libbsd-dev libbpf-dev
-            sudo apt-get install -y libnl-xfrm-3-dev sphinx-common python3-sphinx-rtd-theme libfdt-dev libjansson-dev
-            sudo apt-get install -y python3-pyelftools gcc-14 bzip2-doc libacl1-dev libattr1-dev libbz2-dev libgmp-dev
+            sudo apt-get install -y  liblz4-dev liblzma-dev wget libzstd-dev nettle-dev lsb-release doxygen libarchive-dev
+            sudo apt-get install -y  libnl-xfrm-3-dev sphinx-common python3-sphinx-rtd-theme libfdt-dev libjansson-dev libbsd-dev
+            sudo apt-get install -y  python3-pyelftools gcc-14 bzip2-doc libacl1-dev libattr1-dev libbz2-dev libgmp-dev libbpf-dev
             source ${BASE_DIR}/artifacts/env
             DISTRO=ubuntu-`lsb_release -rs`
             echo "DISTRO=${DISTRO}" >> ${BASE_DIR}/artifacts/env

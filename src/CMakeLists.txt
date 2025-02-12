@@ -166,6 +166,14 @@ elseif (${CMAKE_BUILD_TYPE_LC} MATCHES "gcov")
   link_libraries(gcov)
 endif()
 
+# The following compiler flags are added to avoid errors in VPP with gcc-12
+# TODO: Remove these flags once gcc-12 is supported in VPP
+if (CMAKE_C_COMPILER_ID STREQUAL "GNU" AND
+    CMAKE_C_COMPILER_VERSION VERSION_GREATER_EQUAL "12")
+  add_compile_options(-Wno-error=aggressive-loop-optimizations
+	  -Wno-error=stringop-truncation)
+endif()
+
 set(BUILD_TYPES release debug coverity gcov)
 string(REPLACE ";" " " BUILD_TYPES_STR "${BUILD_TYPES}")
 set_property(CACHE CMAKE_BUILD_TYPE PROPERTY

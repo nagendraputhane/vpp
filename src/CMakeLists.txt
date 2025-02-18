@@ -137,10 +137,6 @@ if (CMAKE_BUILD_TYPE)
   add_compile_options(-g -Werror -Wall)
 endif()
 
-if (CMAKE_C_COMPILER_ID STREQUAL "GNU" OR CMAKE_C_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wno-error=unused-but-set-variable)
-endif()
-
 if (compiler_flag_no_address_of_packed_member)
   add_compile_options(-Wno-address-of-packed-member)
 endif()

@@ -68,3 +68,7 @@ jobs:
           echo $MRVL_PKG_VERSION
           echo $DISTRO
           echo $PKG_POSTFIX
+          [[ "$PKG_POSTFIX" == "-devel" ]] && TAG=devel || TAG=${MRVL_PKG_VERSION}
+          [[ "$PKG_POSTFIX" == "-devel" ]] && IS_DEVEL="true" || IS_DEVEL="false"
+          echo $TAG
+          echo $IS_DEVEL

@@ -51,7 +51,7 @@ jobs:
           # Persist for later steps:
           echo "PKG_POSTFIX=${PKG_POSTFIX}" >> "${PWD}/artifacts/env"
           echo "NIGHTLY=${NIGHTLY}"         >> "$GITHUB_OUTPUT"
-          echo "MRVL_PKG_VERSION=`cat VERSION`" >> "${PWD}/artifacts/env"
+          echo "MRVL_PKG_VERSION=`cat MRVL_VERSION`" >> "${PWD}/artifacts/env"
 
           echo "DPDK_PKG_VERSION=`cat DPDK_VERSION | grep RELEASE_VERSION | awk -F'=' '{print $2}'`" >> "${PWD}/artifacts/env"
           echo "DPDK_BASE_PKG_VERSION=`cat DPDK_VERSION | grep BASE_VERSION | awk -F'=' '{print $2}' | awk -F'.' '{print $1"."$2}'`" >> "${PWD}/artifacts/env"
